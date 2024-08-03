@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import mx.unam.ciencias.icc.igu.EntradaVerificable?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mx.unam.ciencias.icc.igu.ControladorFormaEditaAvatar"
+            prefWidth="400.0" prefHeight="205.0">
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+  <children>
+    <GridPane prefWidth="400.0" prefHeight="150.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0" >
+      <columnConstraints>
+        <ColumnConstraints prefWidth="150.0" />
+        <ColumnConstraints prefWidth="250.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+      </rowConstraints>
+      <children>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0"
+               text="Nombre:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
+               text="Nivel de maná:" />
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2"
+               text="Nivel de vida:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3"
+               text="Nivel de ataque:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="4"
+               text="Nivel de defensa:"/>
+        <EntradaVerificable fx:id="entradaNombre"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="0">
+          <tooltip>
+            <Tooltip text="El nombre no puede ser vacío"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaMana"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="1">
+          <tooltip>
+            <Tooltip text="El nivel de maná debe estar entre 100 y 200"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaVida"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="2">
+          <tooltip>
+            <Tooltip text="El nivel de vida debe estar entre 50 y 100"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaAtaque"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="3">
+          <tooltip>
+            <Tooltip text="El nivel de ataque debe estar entre 300.0 y 1000.0"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaDefensa"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="4">
+          <tooltip>
+            <Tooltip text="El nivel de defensa debe estar entre 300.0 y 1000.0"/>
+          </tooltip>
+        </EntradaVerificable>
+      </children>
+    </GridPane>
+    <ButtonBar AnchorPane.bottomAnchor="10.0"
+               AnchorPane.rightAnchor="10.0">
+      <buttons>
+        <Button fx:id="botonAceptar" disable="true"
+                onAction="#aceptar" text="Aceptar"
+                prefWidth="120.0" />
+        <Button onAction="#cancelar" text="Cancelar"
+                prefWidth="120.0" defaultButton="true" />
+      </buttons>
+    </ButtonBar>
+  </children>
+</AnchorPane>
